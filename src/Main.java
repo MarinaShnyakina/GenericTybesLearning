@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Scanner;
 
 public class Main {
@@ -49,7 +50,8 @@ public class Main {
 
 
         // Объявление Generics
-        // Основной тип <Тип параметр>
+        // ОсновнойТип <ТипПараметр>
+        // ОсновнойТип <ТипПараметр1>, ОсновнойТип <ТипПараметр2>, ОсновнойТип <ТипПараметр3> и т.д.
 
         Object[] objects = {10, "Привет", 3.14}; //здесь происходит автоупаковка
 
@@ -74,5 +76,39 @@ public class Main {
         }
         System.out.println(sum);
 
+        HashMap<Integer, String> map = new HashMap<Integer, String>();
+        map.put(7, "Привет");
+        map.put(15, "Hello");
+
+        ArrayList<String> listHello = new ArrayList<>();
+        listHello.add("Привет");
+        listHello.add("Hi");
+
+        ArrayList<String> listBye = new ArrayList<>();
+        listBye.add("Пока");
+        listBye.add("Good Bye");
+
+        // вложенный ArrayList в ArrayList
+        ArrayList<ArrayList<String>> list = new ArrayList();
+        list.add(listHello);
+        list.add(listBye);
+
+        // можем сразу перечислить оба списка
+        for(ArrayList<String> list2 : list){
+            for(String s : list2){
+                System.out.println(s);
+            }
+        }
+
     }
 }
+
+
+/*
+*               то, что мы делаем в коде                       то, во что преобразует компилятор
+* ArrayList<Integer> List = new ArrayList<Integer>();          ArrayList list = new ArrayList;
+* list.add(1);                                                 list.add((Integer) 1);
+* int x = list.get(0);                                         int x = (Integer) list.get(0);
+* list.set(0,10);                                              list.set(0, (Integer) 10);
+* */
+
