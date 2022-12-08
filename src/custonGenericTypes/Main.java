@@ -19,12 +19,11 @@ public class Main {
         System.out.println(b);*/
 
         // верный второй вариант
-
-        Account <Integer> acc1 = new Account(12345, 5000);
+       /* Account <Integer> acc1 = new Account(12345, 5000);
         System.out.println(acc1.getId());
 
         Account <String> acc2 = new Account("sid12345", 5000);
-        System.out.println(acc2.getId());
+        System.out.println(acc2.getId());*/
 
         // это код с преобразованием
         // нам IJ уже не даст допустить ошибку
@@ -36,11 +35,15 @@ public class Main {
         // System.out.println(a);
 
         // но так как преобразование нам уже не нужно, то лучше написать так
-        int a = acc1.getId() + 10;
+       /* int a = acc1.getId() + 10;
         System.out.println(a);
 
         // а так нельзя
         int b = acc2.getId() + 10;
-        System.out.println(b);
+        System.out.println(b);*/
+
+      // третий вариант interface Accountable
+        Account <String> acc2 = new Account("sid12345", 5000);
+        System.out.println(acc2.getId());
     }
 }
