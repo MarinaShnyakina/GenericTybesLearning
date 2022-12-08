@@ -57,21 +57,22 @@ package custonGenericTypes;
         }*/
 
   // третий вариант interface Accountable
+  // в таком виде мы связали полностью напрямую interface, class и его реализацию в main
 
-public class Account implements  Accountable<String> {
-    private String id;
+public class Account <T> implements Accountable<T> {
+    private T id;
     private int sum;
 
-    public Account(String id, int sum) {
+    public Account(T id, int sum) {
         this.id = id;
         this.sum = sum;
     }
 
-    public String getId() {
+    public T getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(T id) {
         this.id = id;
     }
 
