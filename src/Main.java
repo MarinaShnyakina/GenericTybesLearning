@@ -24,8 +24,8 @@ public class Main {
         Object o2 = new Integer(15);*/
 
 
-
-        Object[] objects = {10, "Привет", 3.14}; //здесь происходит автоупаковка
+        // Неудачный пример приведения в ArrayList
+        /*Object[] objects = {10, "Привет", 3.14}; //здесь происходит автоупаковка
 
         for (Object o : objects){
             if(o instanceof String){
@@ -44,6 +44,33 @@ public class Main {
         int sum = 0;
         for(Object o : numbers){
             sum = sum + (Integer) o;
+        }
+        System.out.println(sum);*/
+
+
+        // Объявление Generics
+        // Основной тип <Тип параметр>
+
+        Object[] objects = {10, "Привет", 3.14}; //здесь происходит автоупаковка
+
+        for (Object o : objects){
+            if(o instanceof String){
+                String s = (String) o; // тут мы делаем Cast - преобразование
+                System.out.println(s);
+            }
+        }
+
+        ArrayList <Integer> numbers = new ArrayList(); // сохраняет object
+
+        for(int i = 0; i < 10; i++){ // сохранять в коллекцию числа 10, 20, ... 100
+            numbers.add(i*10);
+
+            // numbers.add(10.4f); такой код уже не запуститься, Java ограничит нас
+        }
+
+        int sum = 0;
+        for(Integer o : numbers){
+            sum = sum + o;
         }
         System.out.println(sum);
 
