@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args)
     {
-        Object o = new Scanner(System.in);
+       /* Object o = new Scanner(System.in);
 
 
 
@@ -20,7 +20,18 @@ public class Main {
 
         Object o1 = new String();
 
-        Object o2 = new Integer(15);
+        Object o2 = new Integer(15);*/
+
+
+
+        Object[] objects = {10, "Привет", 3.14}; //здесь происходит автоупаковка
+
+        for (Object o : objects){
+            if(o instanceof String){
+                String s = (String) o; // тут мы делаем Cast - преобразование
+                System.out.println(s);
+            }
+        }
 
 
     }
