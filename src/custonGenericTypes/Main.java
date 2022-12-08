@@ -52,5 +52,9 @@ public class Main {
         int a = acc1.getId() + 10;
         System.out.println(a);
 
+
+        //ниже мы пишем для generic Method
+        Account<Integer> acc3 = new Account(13000, 100, "Something");
+
     }
 }
